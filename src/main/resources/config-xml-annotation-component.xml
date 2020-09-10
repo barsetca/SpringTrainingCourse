@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+<!--Модификация файла config-only-xml.xml-->
+
+<!--    т.к. в классе ColorCameraRollImpl указали аннотацию @Component, то эту строку-->
+<!--    <bean id="cameraRoll" class="ru.cherniak.spring.context.training_manual.do_configuration.ColorCameraRollImpl"/>-->
+<!--    удаляем (точнее заменяем на -->
+    <context:component-scan base-package="ru.cherniak.spring.context.training_manual.do_configuration"/>
+<!-- т.к. @Component пометили другой класс (MonoChromeCameraRollImpl), то в этом контексте будет выполняться его логика-->
+
+<!--    Остальное без изменений -->
+    <bean id="camera" class="ru.cherniak.spring.context.training_manual.do_configuration.CameraImpl">
+<!--        переменная-->
+        <property name="cameraRoll">
+<!--            сеттер-->
+            <ref bean="cameraRoll"/>
+        </property>
+    </bean>
+
+<!--    Если некоторый бин необходим для одноразового внедрения и получать его из контекста не требуется, то XML-конфигурацию можно изменить следующим образом:-->
+<!--    <bean id="camera" class="ru.cherniak.spring.context.training_manual.do_configuration.CameraImpl">-->
+  <!--        <property name="cameraRoll">-->
+<!--            <bean  class="ru.cherniak.spring.context.training_manual.do_configuration.ColorCameraRollImpl" />-->
+<!--        </property>-->
+<!--    </bean>-->
+
+
+</beans>

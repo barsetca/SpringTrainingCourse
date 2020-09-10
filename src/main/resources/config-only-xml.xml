@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    1. Создаем конфигурационный файл config-only-xml.xml (Идея шаблон создает автоматом)-->
+<!--    Помещаем его в паку ресурсов, где его будет искать Spring при создании конекста-->
+<!--    Конфигурационный файл предназначен для указания контейнеру объектов, которыми он должен управлять (бинов).-->
+
+<!--    Тег <bean … /> позволяет:-->
+<!--    создать объект определенного класса, который сразу же станет бином - по умолчанию scope singleton;-->
+<!--    внедрить объект другого класса в свойство данного бина, при этом данный объект тоже должен быть объявлен в конфигурационном файле.-->
+
+<!--    С помощью тега bean объявляется объект класса ColorCameraRollImpl.-->
+<!--    В XML-конфигурации в роли имени выступает значение атрибута id = имя интерфейса с мал буквы.-->
+    <bean id="cameraRoll" class="ru.cherniak.spring.context.training_manual.do_configuration.ColorCameraRollImpl"/>
+
+
+<!--    Тег property дает доступ к свойству нашего объекта класса camera. -->
+<!--    В атрибуте name указывается имя данного свойства, а так как пленку мы уже создали, -->
+<!--    то между двумя тегами property необходимо поместить ссылку (reference) на ранее созданный bean. -->
+<!--    Для этого и используется тег ref с атрибутом bean, в котором указывается id ранее созданного бина.-->
+
+    <bean id="camera" class="ru.cherniak.spring.context.training_manual.do_configuration.CameraImpl">
+<!--        переменная-->
+        <property name="cameraRoll">
+<!--            сеттер-->
+            <ref bean="cameraRoll"/>
+        </property>
+    </bean>
+
+<!--    Если некоторый бин необходим для одноразового внедрения и получать его из контекста не требуется, то XML-конфигурацию можно изменить следующим образом:-->
+<!--    <bean id="camera" class="ru.cherniak.spring.context.training_manual.do_configuration.CameraImpl">-->
+  <!--        <property name="cameraRoll">-->
+<!--            <bean  class="ru.cherniak.spring.context.training_manual.do_configuration.ColorCameraRollImpl" />-->
+<!--        </property>-->
+<!--    </bean>-->
+
+
+</beans>

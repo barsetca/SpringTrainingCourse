@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<!--    Внедрить зависимости при использовании XML-конфигурации мы можем несколькими путями: через конструктор и через сеттер. -->
+<!--    Если применять только XML-конфигурацию, -->
+<!--    объявление бина и обеспечение внедрения зависимости типа String через конструктор будет выглядеть следующим образом:-->
+
+<!--    <bean id="helloMan" class="ru.cherniak.spring.context.training_manual.do_DI_primitive.HelloManConstructorSetterXmlImpl">-->
+<!--        <constructor-arg value="Yuri" />-->
+<!--    </bean>-->
+
+<!--    Для тега constructor-arg возможно определение двух дополнительных атрибутов: type и index. -->
+<!--    Они указывают на тип внедряемого значения и его порядковый номер в конструкторе класса:-->
+
+    <bean id="helloMan" class="ru.cherniak.spring.context.training_manual.do_DI_primitive.HelloManConstructorSetterXmlImpl">
+        <constructor-arg type="java.lang.String" index="0" value="Yuri" />
+    </bean>
+
+<!--    Внедрение через сеттер (предпочтительный способ):-->
+    <bean id="helloManSetter" class="ru.cherniak.spring.context.training_manual.do_DI_primitive.HelloManSetterFileConfigImpl">
+        <property name="name" value="Fedor"/>
+    </bean>
+
+
+
+
+
+
+</beans>
