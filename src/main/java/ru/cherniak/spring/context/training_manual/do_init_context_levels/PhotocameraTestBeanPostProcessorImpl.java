@@ -17,12 +17,13 @@ public class PhotocameraTestBeanPostProcessorImpl implements BeanPostProcessor {
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         return bean;
     }
-/*
-Предположим, что помощник перед покупкой фотоаппарата решил проверить его работоспособность.
-Для этого ему необходимо самому попробовать сделать фотографию.
-Для осуществления этой затеи реализуем собственный BeanPostProcessor:
 
- */
+    /*
+    Предположим, что помощник перед покупкой фотоаппарата решил проверить его работоспособность.
+    Для этого ему необходимо самому попробовать сделать фотографию.
+    Для осуществления этой затеи реализуем собственный BeanPostProcessor:
+
+     */
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
 

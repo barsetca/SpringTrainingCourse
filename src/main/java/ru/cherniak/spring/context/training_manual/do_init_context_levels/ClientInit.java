@@ -11,15 +11,13 @@ class ClientInit {
         camera.doPhoto();
         camera.breaking();
         camera.doPhoto();
-        System.out.println("Камера сломана? - "+ camera.isBroken());
+        System.out.println("Камера сломана? - " + camera.isBroken());
 
         //если для бина используется scope по умолчанию (singleton), то от создания нового объекта ничего не изменится,
         // т.к это будет все тот же объект, т.е. камера будет попрежнему сломана
         Camera newCamera = ctx.getBean("cameraImpl", Camera.class);
-        System.out.println("Камера сломана - "+ newCamera.isBroken()); //true
+        System.out.println("Камера сломана - " + newCamera.isBroken()); //true
 
         ctx.close();
-
     }
-
 }

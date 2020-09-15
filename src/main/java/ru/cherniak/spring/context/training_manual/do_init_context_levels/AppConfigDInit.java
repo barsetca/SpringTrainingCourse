@@ -9,12 +9,12 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan(basePackages = "ru.cherniak.spring.context.training_manual.do_init_context_levels")
 public class AppConfigDInit {
     @Bean(name = "cameraRollChangeBeanFactoryPostProcessor")
-    public CameraRollChangeBeanFactoryPostProcessorImpl cameraRollChange(){
+    public CameraRollChangeBeanFactoryPostProcessorImpl cameraRollChange() {
         return new CameraRollChangeBeanFactoryPostProcessorImpl();
     }
 
     @Bean(name = "photocameraTestBeanPostProcessorImpl")
-    public PhotocameraTestBeanPostProcessorImpl photocameraTestBeanPostProcessorImpl(){
+    public PhotocameraTestBeanPostProcessorImpl photocameraTestBeanPostProcessorImpl() {
         return new PhotocameraTestBeanPostProcessorImpl();
     }
 }

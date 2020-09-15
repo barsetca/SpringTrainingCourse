@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
         //("cameraRoll")
-   class BlackAndWhiteCameraRollImpl implements CameraRoll {
+class BlackAndWhiteCameraRollImpl implements CameraRoll {
     @Override
     public void processing() {
         System.out.println("BlackAndWhite photo taken");

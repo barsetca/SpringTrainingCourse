@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @UnproducableCameraRoll(usingCameraRollClass = ColorCameraRollImpl.class)
-   class BlackAndWhiteCameraRollImpl implements CameraRoll {
+class BlackAndWhiteCameraRollImpl implements CameraRoll {
     @Override
     public void processing() {
         System.out.println("BlackAndWhite photo taken");

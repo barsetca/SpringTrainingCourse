@@ -11,7 +11,7 @@ public class AppConfigDIPrimitive {
     Аннотация @Value внедряет примитивное значение в элемент, к которому применена данная аннотация.
     Для внедрения зависимости name через сеттер достаточно воспользоваться пустым конструктором и использовать метод setName(name).
      */
-    public HelloMan helloMan(@Value("Vasya") String name){
+    public HelloMan helloMan(@Value("Vasya") String name) {
         return new HelloManSetterFileConfigImpl(name);
     }
 }

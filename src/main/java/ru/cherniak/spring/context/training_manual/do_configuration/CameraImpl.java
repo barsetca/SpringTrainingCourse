@@ -1,6 +1,6 @@
 package ru.cherniak.spring.context.training_manual.do_configuration;
 
-public class CameraImpl implements Camera{
+public class CameraImpl implements Camera {
 
     private CameraRoll cameraRoll;
 

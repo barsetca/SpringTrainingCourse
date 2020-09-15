@@ -20,7 +20,7 @@ public class ClientConfig {
         System.out.println("\nconfig-xml-annotation-component.xml - BlackAndWhite");
         ApplicationContext ctxAnnotation =
                 new ClassPathXmlApplicationContext("config-xml-annotation-component.xml");
-        Camera otherCamera = ctxAnnotation.getBean("camera" , Camera.class);
+        Camera otherCamera = ctxAnnotation.getBean("camera", Camera.class);
         otherCamera.doPhoto();
 
 

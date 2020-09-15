@@ -32,13 +32,12 @@ class CameraImpl implements Camera {
         return broken;
     }
 
-     @Autowired
+    @Autowired
     //@Qualifier(value = "colorCameraRollImpl")
     @Override
     public void setCameraRoll(CameraRoll cameraRoll) {
         this.cameraRoll = cameraRoll;
     }
-
 
     @Override
     public void doPhoto() {

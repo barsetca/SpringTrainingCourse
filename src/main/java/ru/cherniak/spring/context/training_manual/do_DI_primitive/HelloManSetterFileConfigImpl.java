@@ -3,13 +3,13 @@ package ru.cherniak.spring.context.training_manual.do_DI_primitive;
 import org.springframework.stereotype.Component;
 
 @Component
-public class HelloManSetterFileConfigImpl implements HelloMan{
+public class HelloManSetterFileConfigImpl implements HelloMan {
     private String name;
 
-    public HelloManSetterFileConfigImpl(){
+    public HelloManSetterFileConfigImpl() {
     }
 
-    public HelloManSetterFileConfigImpl(String name){
+    public HelloManSetterFileConfigImpl(String name) {
         this.name = name;
     }
 
@@ -21,8 +21,7 @@ public class HelloManSetterFileConfigImpl implements HelloMan{
         this.name = name;
     }
 
-    public void helloSay(){
+    public void helloSay() {
         System.out.println("Hello from " + this.name);
     }
-
 }

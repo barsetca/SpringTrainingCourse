@@ -19,8 +19,5 @@ public class ClientDiPrimitive {
         ApplicationContext contextFile = new AnnotationConfigApplicationContext(AppConfigDIPrimitive.class);
         HelloMan helloManFile = contextFile.getBean("helloManSetter", HelloMan.class);
         helloManFile.helloSay();
-
-
     }
-
 }

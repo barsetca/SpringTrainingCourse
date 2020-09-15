@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 implements BeanFactoryPostProcessor
  */
 @Component("cameraRoll")
-public class MonoChromeCameraRollImpl implements CameraRoll{
+public class MonoChromeCameraRollImpl implements CameraRoll {
     @Override
     public void processing() {
         System.out.println("BlackAndWhite photo taken");

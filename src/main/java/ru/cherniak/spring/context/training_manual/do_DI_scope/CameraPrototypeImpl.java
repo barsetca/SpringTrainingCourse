@@ -7,15 +7,14 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
 
 @Component
-        //("cameraPrototypeImpl")
+//("cameraPrototypeImpl")
 @Scope("prototype")
 class CameraPrototypeImpl implements Camera {
 
-   // @Autowired - DI (перед полем не рекомендуется, либо перед конструкторомБ а лучше всего  - сеттер (см ниже)
-   // @Qualifier(value = "colorCameraRollImpl") - усли есть 2е реализации то без это throw e NoUniqueBeanDefinitionException
+    // @Autowired - DI (перед полем не рекомендуется, либо перед конструкторомБ а лучше всего  - сеттер (см ниже)
+    // @Qualifier(value = "colorCameraRollImpl") - усли есть 2е реализации то без это throw e NoUniqueBeanDefinitionException
     private CameraRoll cameraRoll;
 
     @Value("false")

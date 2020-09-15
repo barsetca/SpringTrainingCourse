@@ -1,12 +1,12 @@
 package ru.cherniak.spring.context.training_manual.do_DI_primitive;
 
-public class HelloManConstructorSetterXmlImpl implements HelloMan{
+public class HelloManConstructorSetterXmlImpl implements HelloMan {
     private String name;
 
-    public HelloManConstructorSetterXmlImpl(){
+    public HelloManConstructorSetterXmlImpl() {
     }
 
-    public HelloManConstructorSetterXmlImpl(String name){
+    public HelloManConstructorSetterXmlImpl(String name) {
         this.name = name;
     }
 
@@ -18,7 +18,7 @@ public class HelloManConstructorSetterXmlImpl implements HelloMan{
         this.name = name;
     }
 
-    public void helloSay(){
+    public void helloSay() {
         System.out.println("Hello," + this.name);
     }
 

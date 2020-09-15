@@ -3,10 +3,6 @@ package ru.cherniak.spring.context.training_manual.do_configuration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import ru.cherniak.spring.context.training_manual.do_configuration.Camera;
-import ru.cherniak.spring.context.training_manual.do_configuration.CameraImpl;
-import ru.cherniak.spring.context.training_manual.do_configuration.CameraRoll;
-import ru.cherniak.spring.context.training_manual.do_configuration.ColorCameraRollImpl;
 
 /*
 @Configuration — аннотация, указывающая на то, что данный Java-класс является классом конфигурации;
@@ -24,7 +20,7 @@ public class AppConfigWithoutXml {
     @Component("cameraRoll") помечен MonoChromeCameraRollImpl
        */
     @Bean(name = "colorCameraRollImpl")
-    public ColorCameraRollImpl colorCameraRollImpl(){
+    public ColorCameraRollImpl colorCameraRollImpl() {
         return new ColorCameraRollImpl();
     }
 
@@ -32,7 +28,7 @@ public class AppConfigWithoutXml {
     //если написать cameraRoll, то подгрузиться бин с таким именем (если есть)
     // в нашем случае MonoChromeCameraRollImpl
     @Bean(name = "camera")
-    public Camera camera(CameraRoll  colorCameraRollImpl){
+    public Camera camera(CameraRoll colorCameraRollImpl) {
         Camera camera = new CameraImpl();
         camera.setCameraRoll(colorCameraRollImpl);
         return camera;
